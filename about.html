@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* Tambahan styling sederhana */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #f5f5f5;
+      padding: 1em;
+      z-index: 10;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-menu li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .nav-menu li a:hover {
+      color: #0077cc;
+    }
+
+    section {
+      padding: 4em 2em;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1em;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      text-align: center;
+    }
+
+    .circular-chart {
+      width: 120px;
+      height: 120px;
+      transform: rotate(-90deg);
+    }
+
+    .circle-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 3.8;
+    }
+
+    .circle {
+      fill: none;
+      stroke-width: 3.8;
+      stroke-linecap: round;
+    }
+
+    .percentage {
+      fill: #333;
+      font-size: 0.5em;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      transform: rotate(90deg);
+    }
+
+    .circular-chart.html .circle { stroke: #e34c26; }
+    .circular-chart.css .circle { stroke: #264de4; }
+    .circular-chart.js .circle { stroke: #f0db4f; }
+
+    footer {
+      background-color: #f5f5f5;
+      padding: 2em;
+      color: #777;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section: About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="foto/profile.jpg" alt="Foto Profil" class="profile-pic" />
+    <h2>Technology Information Student</h2>
+    <p>I am a student who continues to develop my skills in technology and digitalization. Passionate about learning emerging technologies, with a strong interest in software development, data analysis, and digital transformation. I am eager to apply my knowledge through practical projects, collaborative teamwork, and continuous self-improvement to contribute meaningfully in the tech industry.
+    </p>
+  </section>
+
+  <section class="left-text">
+    <p> >Birthday       : 23 March 2006</p>
+    <p> >whattsapp      : +62822-6735-7912</p>
+    <p> >City           : Medan, Indonesia</p>
+    <p> >E-mail         : musa23maret@gmail.com</p>
+  </section>
+
+  <section class="left-text">
+    <p>I also pursue my interests in design and photography, as I believe in continuous learning, creative collaboration, and producing efficient and visually appealing work. With a strong foundation in technology and a passion for creativity, I strive to bridge the gap between functionality and aesthetics in every project I take on.</p>
+  </section>
+
+  <!-- Section: Skills -->
+  <section id="skills">
+    <h2>My Skills</h2>
+  
+    <div class="skill-bar">
+      <span>HTML</span>
+      <div class="bar">
+        <div class="fill" style="width: 90%;">90%</div>
+      </div>
+    </div>
+  
+    <div class="skill-bar">
+      <span>CSS</span>
+      <div class="bar">
+        <div class="fill" style="width: 85%;">85%</div>
+      </div>
+    </div>
+  
+    <div class="skill-bar">
+      <span>Photography</span>
+      <div class="bar">
+        <div class="fill" style="width: 60%;">60%</div>
+      </div>
+    </div>
+  </section>  
+
+  
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 [Musa Al HAdid]. All rights reserved.</p>
+  </footer>
+  <script>
+    // Fungsi untuk mengecek apakah elemen terlihat di layar
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+      );
+    }
+  
+    function animateSkills() {
+      document.querySelectorAll('.fill').forEach(bar => {
+        if (isInViewport(bar) && bar.style.width === '0px') {
+          bar.style.width = bar.getAttribute('data-width');
+        }
+      });
+    }
+  
+    // Jalankan saat scroll dan saat halaman load
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('load', animateSkills);
+  </script>
+  
+
+</body>
+</html>
