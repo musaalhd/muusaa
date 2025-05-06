@@ -1,434 +1,60 @@
-/* RESET & DASAR */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* ========== HOME PAGE STYLING (index.html) ========== */
-  .home-page {
-    background: url('foto/background.jpg') no-repeat center center/cover;
-    height: 100vh;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .home-page h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1em;
-  }
-  
-  .about-button {
-    padding: 0.75em 1.5em;
-    font-size: 1em;
-    border: none;
-    background-color: rgba(13, 216, 46, 0.9);
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .about-button:hover {
-    background-color: #0077cc;
-    color: white;
-  }
-  
-  /* ========== NAVBAR (about.html) ========== */
-nav {
-    position: sticky;
-    top: 0;
-    background-color: #f5f5f5;
-    padding: 1em 0;
-    z-index: 1000;
-    border-bottom: 1px solid #000000;
-  }
-  
-  .nav-menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;  
-    gap: 2em;
-  }
-  
-  .nav-menu li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-menu li a:hover {
-    color: #0077cc;
-  }
-  @media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - [MUSA AL HADID]</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-  }
+</head>
+<body>
 
-  .nav-links a {
-    margin: 0.5em 0;
-  }
-}
+  <nav>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="portfolio.html" style="color: #0077cc;">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem 2rem;
-  color: white;
-}
+  <section>
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <img src="foto/pengalaman 1.jpg" alt="Portfolio 1" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20240831-WA0056.jpg" alt="Portfolio 2" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20241106-WA0032(1).jpg" alt="Portfolio 3" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20241107-WA0113.jpg" alt="Portfolio 4" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20241224-WA0016.jpg" alt="Portfolio 5" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20241224-WA0026.jpg" alt="Portfolio 6" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20241224-WA0029.jpg" alt="Portfolio 7" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20250101-WA0213.jpg" alt="Portfolio 8" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20250102-WA0009.jpg" alt="Portfolio 9" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20250102-WA0015.jpg" alt="Portfolio 10" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG-20250104-WA0005.jpg" alt="Portfolio 11" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG20250421102246 - Copy - Copy.jpg" alt="Portfolio 12" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/IMG20250421102522.jpg" alt="Portfolio 13" class="thumbnail" onclick="openPopup(this)">
+      <img src="foto/profile.jpg" alt="Portfolio 14" class="thumbnail" onclick="openPopup(this)">
+      <!-- Tambahkan sampai 15 -->
+    </div>
+  
+      
+      <!-- Popup overlay -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <img id="popup-img" src="" alt="Full Image">
+        </div>
+      </div>
+      
+    </div>
+  </section>
 
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+  <footer>
+    <p>&copy; 2025 [Musa Al Hadid]. All rights reserved.</p>
+  </footer>
 
-.navbar .nav-links {
-  display: flex;
-}
-
-.navbar .nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 1rem;
-  font-size: 1rem;
-}
-
-.navbar .nav-links a:hover {
-  text-decoration: underline;
-}
-
-  
-  /* ========== SECTION UMUM ========== */
-  section {
-    padding: 2.5em 1.5em;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-  }
-  
-  section h2 {
-    margin-bottom: 1em;
-    font-size: 2em;
-  }
-  
-  p {
-    margin: 0.5em 0;
-  }
-  
-  /* ========== ABOUT ME ========== */
-  .profile-pic {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1em;
-  }
-  
-  /* ========== SKILLS ========== */
- /* Skill section */
-#skills {
-    max-width: 700px;
-    margin: 2em auto;
-    padding: 0 1em;
-  }
-  
-  .skill-bar {
-    margin-bottom: 1.5em;
-  }
-  
-  .skill-bar span {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .bar {
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    height: 25px;
-    overflow: hidden;
-  }
-  
-  .fill {
-  height: 100%;
-  width: 0; /* Mulai dari 0 */
-  line-height: 25px;
-  background-color: #0077cc;
-  color: #fff;
-  text-align: right;
-  padding-right: 10px;
-  border-radius: 10px 0 0 10px;
-  font-weight: bold;
-  transition: width 1s ease-out;
-}
-
-  }
-  
-  
-  /* ========== RESUME, PORTFOLIO, CONTACT ========== */
-  #portfolio ul {
-    text-align: left;
-    max-width: 600px;
-    margin: auto;
-    padding-left: 1em;
-  }
-  
-  /* ========== FOOTER ========== */
-  footer {
-    background-color: #f5f5f5;
-    text-align: center;
-    padding: 2em;
-    font-size: 0.9em;
-    color: #777;
-  }
-  .resume-content {
-    text-align: left;
-    margin-top: 1.5em;
-    padding: 0 1em;
-  }
-  
-  .resume-content h3 {
-    margin-top: 1.5em;
-    color: #0077cc;
-  }
-
-  .portfolio-list {
-    text-align: left;
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 0 1em;
-  }
-  
-  .portfolio-item {
-    margin-bottom: 2em;
-  }
-  
-  .portfolio-item h3 {
-    color: #0077cc;
-    margin-bottom: 0.5em;
-  }
-
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 2em;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .portfolio-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
-  }
-
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    gap: 1.5em;
-  }
-  
-  .contact-info {
-    text-align: left;
-    line-height: 1.6;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .contact-form textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-  .contact-form button {
-    background-color: #0077cc;
-    color: #fff;
-    padding: 0.75em;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-form button:hover {
-    background-color: #005fa3;
-  }
-
-  .contact-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 2em auto;
-    padding: 1em;
-    gap: 1.5em;
-  }
-  
-  .contact-info {
-    text-align: left;
-    line-height: 1.6;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .contact-form textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-  .contact-form button {
-    background-color: #0077cc;
-    color: #fff;
-    padding: 0.75em;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-form button:hover {
-    background-color: #005fa3;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1em;
-  }
-
-/* Grid style (jika belum ada) */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  padding: 1em;
-}
-
-/* Thumbnail */
-.thumbnail {
-  width: 100%;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.thumbnail:hover {
-  transform: scale(1.05);
-}
-
-/* Popup overlay */
-.popup {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  align-items: center;
-}
-
-/* Content box */
-.popup-content {
-  position: relative;
-  width: 80%;
-  max-width: 600px;
-  background: #fff;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  animation: fadeIn 0.3s ease;
-}
-
-/* Gambar besar */
-#popup-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Tombol close */
-.close {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #333;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-  
+</body>
+</html>
