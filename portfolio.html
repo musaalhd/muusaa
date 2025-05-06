@@ -41,6 +41,27 @@
   <footer>
     <p>&copy; 2025 [Musa Al Hadid]. All rights reserved.</p>
   </footer>
+  <script>
+  function openPopup(img) {
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-img');
+    popupImg.src = img.src;
+    popup.style.display = 'flex';
+  }
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Optional: klik luar popup untuk tutup
+  window.addEventListener('click', function(e) {
+    const popup = document.getElementById('popup');
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+</script>
+
 
 </body>
 </html>
