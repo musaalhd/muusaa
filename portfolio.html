@@ -20,37 +20,50 @@
     </ul>
   </nav>
 
-  <section>
-    <h2>Portfolio</h2>
+  <section class="portfolio">
+    <h2>My Portfolio</h2>
     <div class="portfolio-grid">
-      <img src="foto/pengalaman 1.jpg" alt="Portfolio 1" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20240831-WA0056.jpg" alt="Portfolio 2" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20241106-WA0032(1).jpg" alt="Portfolio 3" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20241107-WA0113.jpg" alt="Portfolio 4" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20241224-WA0016.jpg" alt="Portfolio 5" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20241224-WA0026.jpg" alt="Portfolio 6" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20241224-WA0029.jpg" alt="Portfolio 7" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20250101-WA0213.jpg" alt="Portfolio 8" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20250102-WA0009.jpg" alt="Portfolio 9" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20250102-WA0015.jpg" alt="Portfolio 10" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG-20250104-WA0005.jpg" alt="Portfolio 11" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG20250421102246 - Copy - Copy.jpg" alt="Portfolio 12" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/IMG20250421102522.jpg" alt="Portfolio 13" class="thumbnail" onclick="openPopup(this)">
-      <img src="foto/profile.jpg" alt="Portfolio 14" class="thumbnail" onclick="openPopup(this)">
-      <!-- Tambahkan sampai 15 -->
-    </div>
-  
-      
-      <!-- Popup overlay -->
-      <div id="popup" class="popup">
-        <div class="popup-content">
-          <span class="close" onclick="closePopup()">&times;</span>
-          <img id="popup-img" src="" alt="Full Image">
-        </div>
-      </div>
-      
+      <!-- 3x5 = 15 gambar -->
+      <img src="foto/IMG-20240831-WA0056.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20241106-WA0032(1).jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20241107-WA0113.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20241224-WA0016.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20241224-WA0026.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20241224-WA0029.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20250101-WA0213.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20250102-WA0009.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20250102-WA0015.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG-20250104-WA0005.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG20250421102246 - Copy - Copy.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/IMG20250421102522.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/pengalaman 1.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/profile.jpg" class="thumbnail" onclick="openPopup(this.src)" />
+      <img src="foto/GX012963-1.MP4" class="thumbnail" onclick="openPopup(this.src)" />
     </div>
   </section>
+
+  <!-- POPUP VIEWER -->
+  <div class="popup" id="popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <img id="popup-img" src="" alt="Popup Image" />
+    </div>
+  </div>
+  
+
+  <!-- JS -->
+  <script>
+    function openPopup(src) {
+      document.getElementById("popup").style.display = "flex";
+      document.getElementById("popup-img").src = src;
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  </script>
 
   <footer>
     <p>&copy; 2025 [Musa Al Hadid]. All rights reserved.</p>
