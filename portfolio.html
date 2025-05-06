@@ -1,122 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f7f7f7;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - [MUSA AL HADID]</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 2em;
-      background-color: #333;
-      color: white;
-    }
-
-    .navbar a {
-      color: white;
-      margin-left: 1em;
-      text-decoration: none;
-    }
-
-    h1 {
-      text-align: center;
-      margin: 2rem 0;
-      font-size: 2.5rem;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .thumbnail {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .thumbnail:hover {
-      transform: scale(1.05);
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(5px);
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .popup-content {
-      position: relative;
-      width: 80%;
-      max-width: 600px;
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-    }
-
-    .popup-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .close {
-      position: absolute;
-      top: 10px; right: 15px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #333;
-    }
-
-    @media (max-width: 768px) {
-      .thumbnail {
-        height: 150px;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <div class="navbar">
-  <div class="logo">My Portfolio</div>
- <nav>
+  <nav>
     <ul class="nav-menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="resume.html">Resume</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="portfolio.html" style="color: #0077cc;">Portfolio</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-</div>
 
   <section>
     <h2>Portfolio</h2>
-  <div class="portfolio-grid">
+    <div class="portfolio-grid">
       <img src="foto/pengalaman 1.jpg" alt="Portfolio 1" class="thumbnail" onclick="openPopup(this)">
       <img src="foto/IMG-20240831-WA0056.jpg" alt="Portfolio 2" class="thumbnail" onclick="openPopup(this)">
       <img src="foto/IMG-20241106-WA0032(1).jpg" alt="Portfolio 3" class="thumbnail" onclick="openPopup(this)">
@@ -131,40 +37,24 @@
       <img src="foto/IMG20250421102246 - Copy - Copy.jpg" alt="Portfolio 12" class="thumbnail" onclick="openPopup(this)">
       <img src="foto/IMG20250421102522.jpg" alt="Portfolio 13" class="thumbnail" onclick="openPopup(this)">
       <img src="foto/profile.jpg" alt="Portfolio 14" class="thumbnail" onclick="openPopup(this)">
-      <img src="https://via.placeholder.com/400x300" alt="Portfolio 14" class="thumbnail">
-      <img src="https://via.placeholder.com/400x300" alt="Portfolio 15" class="thumbnail">
-
-
       <!-- Tambahkan sampai 15 -->
     </div>
-
-<!-- Popup overlay -->
-<div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <img id="popup-img" src="" alt="Popup Image">
+  
+      
+      <!-- Popup overlay -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <img id="popup-img" src="" alt="Full Image">
+        </div>
+      </div>
+      
     </div>
-  </div>
+  </section>
 
-  <script>
-    function openPopup(img) {
-      const popup = document.getElementById('popup');
-      const popupImg = document.getElementById('popup-img');
-      popupImg.src = img.src;
-      popup.style.display = 'flex';
-    }
-
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-    }
-
-    window.addEventListener('click', function(e) {
-      const popup = document.getElementById('popup');
-      if (e.target === popup) {
-        closePopup();
-      }
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 [Musa Al Hadid]. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
