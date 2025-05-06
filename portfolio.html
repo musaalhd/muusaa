@@ -23,23 +23,19 @@
   <section>
     <h2>Portfolio</h2>
     <div class="portfolio-grid">
-      <!-- Ganti src dengan path gambar kamu -->
-      <img src="foto/pengalaman 1.jpg" alt="Portfolio 1" />
-      <img src="img/portfolio2.jpg" alt="Portfolio 2" />
-      <img src="img/portfolio3.jpg" alt="Portfolio 3" />
-      <img src="img/portfolio4.jpg" alt="Portfolio 4" />
-      <img src="img/portfolio5.jpg" alt="Portfolio 5" />
-      <img src="img/portfolio6.jpg" alt="Portfolio 6" />
-      <img src="img/portfolio7.jpg" alt="Portfolio 7" />
-      <img src="img/portfolio8.jpg" alt="Portfolio 8" />
-      <img src="img/portfolio9.jpg" alt="Portfolio 9" />
-      <img src="img/portfolio10.jpg" alt="Portfolio 10" />
-      <img src="img/portfolio11.jpg" alt="Portfolio 11" />
-      <img src="img/portfolio12.jpg" alt="Portfolio 12" />
-      <img src="img/portfolio13.jpg" alt="Portfolio 13" />
-      <img src="img/portfolio14.jpg" alt="Portfolio 14" />
-      <img src="img/portfolio15.jpg" alt="Portfolio 15" />
-    </div>
+  <img src="foto/pengalaman1.jpg" alt="Portfolio 1" class="thumbnail" onclick="openPopup(this)">
+  <img src="img2.jpg" alt="Portfolio 2" class="thumbnail" onclick="openPopup(this)">
+  <!-- Tambahkan gambar lain -->
+</div>
+
+<!-- Popup overlay -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="" alt="Full Image">
+  </div>
+</div>
+
   </section>
 
   <footer>
