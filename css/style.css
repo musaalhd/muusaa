@@ -308,29 +308,6 @@
   .contact-form button:hover {
     background-color: #005fa3;
   }
-/* Responsif untuk layar kecil (HP) */
-@media screen and (max-width: 768px) {
-
-    /* Navigasi jadi kolom */
-    .nav-menu {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-  
-    /* Grid portfolio jadi 2 kolom */
-    .portfolio-grid {
-      grid-template-columns: repeat(2, 1fr);
-      padding: 1em;
-    }
-  
-    /* Jika layar sangat kecil (misal iPhone SE), pakai 1 kolom */
-    @media screen and (max-width: 480px) {
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  
     /* Section umum */
     section {
       padding: 1em;
