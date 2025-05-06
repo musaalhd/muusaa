@@ -79,6 +79,21 @@
   .nav-menu li a:hover {
     color: #0077cc;
   }
+  @media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links a {
+    margin: 0.5em 0;
+  }
+}
 
 
   
