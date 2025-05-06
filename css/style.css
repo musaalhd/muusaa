@@ -308,27 +308,6 @@
   .contact-form button:hover {
     background-color: #005fa3;
   }
-    /* Section umum */
-    section {
-      padding: 1em;
-    }
-  
-    /* Kontak */
-    .contact-container {
-      padding: 1em;
-    }
-  
-    .contact-form input,
-    .contact-form textarea {
-      font-size: 1em;
-    }
-  
-    /* Skill circle (jika ada) */
-    .skill-circle {
-      width: 100px;
-      height: 100px;
-    }
-  }
 
   img {
     width: 100%;
